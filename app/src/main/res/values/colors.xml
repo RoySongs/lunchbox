@@ -3,4 +3,10 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <!--<가람작성>-->
+    <!--타이틀 바 클릭 시 색깔 셀렉터_drawable폴더의 select_title.xml에서 사용-->
+    <color name="color_title_n">#f26657</color>
+    <color name="color_title_p">#A8463D</color>
+    <!--</가람작성>-->
 </resources>

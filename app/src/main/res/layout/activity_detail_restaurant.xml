@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.DetailRestaurantActivity">
+
+    <!--가람담당_식당상세화면-->
+
+    <!--커스텀 타이틀 바-->
+    <LinearLayout
+        android:id="@+id/llTitleBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#f26657"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!--좌측은 뒤로가기 버튼 배치-->
+        <LinearLayout
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/llBack"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/select_title"
+                android:gravity="center_vertical"
+                android:onClick="onClickListener"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/ic_launcher_foreground" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!--타이틀바 중간에 타이틀 이름 배치-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/txt_title"
+            android:textColor="#ffffff"
+            android:layout_marginRight="16dp"
+            android:textSize="20sp" />
+
+        <!--우측은 빈 view 배치-->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <!--이미지-->
+
+    <!--고등어 구이-->
+
+    <!--길찾기,네비게이션 버튼 등-->
+
+</LinearLayout>

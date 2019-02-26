@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--메인으로 타이틀 바 등을 클릭했을 때 색깔 셀렉터-->
+    <!--최초 색깔-->
+    <item android:drawable="@color/color_title_n"/>
+    <!--누르고 다시 뗼 때 색깔-->
+    <item android:state_focused="true" android:drawable="@color/color_title_n"/>
+    <!--누를 때 잠깐 색깔 변함-->
+    <item android:state_pressed="true" android:drawable="@color/color_title_p"/>
+
+</selector>

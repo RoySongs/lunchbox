@@ -14,5 +14,8 @@
     <string name="title_activity_setting_fragment">SettingFragment</string>
     <!--</로이작성>-->
 
+    <!--<가람작성>-->
+    <string name="txt_title">런치박스</string>
+    <!--</가람작성>-->
 
 </resources>

@@ -2,19 +2,30 @@ package com.example.gsson.lunchbox;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.gsson.lunchbox.base.AbstBaseActivity;
 
-    Button button;
+public class MainActivity extends AbstBaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    protected void onCreateChild() {
         setContentView(R.layout.activity_main);
+    }
 
-        //garam test
-        Toast.makeText(this,"garam", Toast.LENGTH_LONG).show();
+    @Override
+    protected void onDestoryChild() {
+
+    }
+
+    @Override
+    public void onClickListener(View v) {
+        switch (v.getId()) {
+            case R.id.bt01:
+                showToastLong("hello world");
+                break;
+        }
     }
 }
