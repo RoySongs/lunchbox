@@ -16,7 +16,11 @@
 
     <!--<가람작성>-->
     <string name="txt_title">런치박스</string>
-    <string name="back_dialog_title">런치박스를 종료하시겠습니까?</string>
     <!--</가람작성>-->
+
+    <!--</지연작성>-->
+    <string name="back_dialog_title">런치박스를 종료하시겠습니까?</string>
+    <string name="menu_picker_start">런치 메뉴박스 PLAY</string>
+    <!--</지연작성>-->
 
 </resources>
