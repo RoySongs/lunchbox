@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">lunchbox</string>
+
+
+    <!--<로이작성>-->
+    <string name="title_activity_setting">SettingActivity</string>
+    <string name="setting_name">설정</string>
+    <string name="setting_main_category1">서비스 안내</string>
+    <string name="setting_main_category2">약관 및 정책</string>
+    <string name="setting_main_category3">고객센터</string>
+    <string name="setting_sub_category1">공지사항</string>
+    <string name="setting_sub_category2">버전 정보</string>
+    <string name="setting_sub_category3">위치기반 서비스 이용약관</string>
+    <string name="title_activity_setting_fragment">SettingFragment</string>
+    <!--</로이작성>-->
+
+
 </resources>
