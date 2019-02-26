@@ -64,10 +64,112 @@
             android:layout_weight="1" />
     </LinearLayout>
 
-    <!--이미지-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <!--고등어 구이-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent"/>
 
-    <!--길찾기,네비게이션 버튼 등-->
+            <!--이미지-->
+            <ImageView
+                android:layout_width="match_parent"
+                android:background="@drawable/ic_launcher_foreground"
+                android:layout_height="1dp" />
+
+            <!--상하 배치-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+
+                <!--좌우 배치-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <!--고등어 구이-->
+                    <TextView
+                        android:id="@+id/tvMenuName"
+                        android:layout_width="wrap_content"
+                        android:text="고등어 구이"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        android:layout_height="wrap_content" />
+
+                    <!--380-->
+                    <TextView
+                        android:id="@+id/tvDistance"
+                        android:layout_width="wrap_content"
+                        android:text="380"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content" />
+
+                    <!--m-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="m"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+
+                <!--길찾기,네비게이션 버튼 등-->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:layout_height="wrap_content">
+
+                    <!--길찾기-->
+                    <Button
+                        android:layout_width="50dp"
+                        android:background="@drawable/ic_launcher_foreground"
+                        android:layout_height="50dp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"/>
+
+                    <!--내비게이션-->
+                    <Button
+                        android:layout_width="50dp"
+                        android:background="@drawable/ic_launcher_foreground"
+                        android:layout_height="50dp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"/>
+
+                    <!--택시 부르기-->
+                    <Button
+                        android:layout_width="50dp"
+                        android:background="@drawable/ic_launcher_foreground"
+                        android:layout_height="50dp" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"/>
+
+                    <!--주소 복사-->
+                    <Button
+                        android:layout_width="50dp"
+                        android:background="@drawable/ic_launcher_foreground"
+                        android:layout_height="50dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
 </LinearLayout>
