@@ -23,4 +23,11 @@
     <string name="menu_picker_start">런치 메뉴박스 PLAY</string>
     <!--</지연작성>-->
 
+    <!--용-->
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_title">런치박스</string>
+    <!--석-->
+
 </resources>

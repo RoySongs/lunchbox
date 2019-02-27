@@ -9,4 +9,10 @@
     <color name="color_title_n">#f26657</color>
     <color name="color_title_p">#A8463D</color>
     <!--</가람작성>-->
+
+    <!--용-->
+    <color name="color_dydtjr_b">#00a5ff</color>
+    <color name="color_dydtjr_r">#ff0000</color>
+    <!--석-->
+
 </resources>
