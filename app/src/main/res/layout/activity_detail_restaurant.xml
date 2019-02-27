@@ -51,10 +51,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginRight="16dp"
             android:gravity="center"
             android:text="@string/txt_title"
             android:textColor="#ffffff"
-            android:layout_marginRight="16dp"
             android:textSize="20sp" />
 
         <!--우측은 빈 view 배치-->
@@ -70,105 +70,235 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
 
             <!--이미지-->
             <ImageView
                 android:layout_width="match_parent"
-                android:background="@drawable/ic_launcher_foreground"
-                android:layout_height="1dp" />
+                android:layout_height="250dp"
+                android:background="@drawable/ic_launcher_foreground" />
 
             <!--상하 배치-->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:padding="10dp"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_height="match_parent">
+                android:padding="10dp">
 
                 <!--좌우 배치-->
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <!--고등어 구이-->
                     <TextView
                         android:id="@+id/tvMenuName"
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="고등어 구이"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
                         android:textColor="#000"
-                        android:layout_height="wrap_content" />
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                     <!--380-->
                     <TextView
                         android:id="@+id/tvDistance"
                         android:layout_width="wrap_content"
-                        android:text="380"
+                        android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:textSize="15sp"
-                        android:layout_height="wrap_content" />
+                        android:text="380"
+                        android:textSize="15sp" />
 
                     <!--m-->
                     <TextView
                         android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="m"
-                        android:textSize="15sp"
-                        android:layout_height="wrap_content" />
+                        android:textSize="15sp" />
                 </LinearLayout>
-
-
-                <!--길찾기,네비게이션 버튼 등-->
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_gravity="center"
-                    android:layout_height="wrap_content">
-
-                    <!--길찾기-->
-                    <Button
-                        android:layout_width="50dp"
-                        android:background="@drawable/ic_launcher_foreground"
-                        android:layout_height="50dp" />
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"/>
-
-                    <!--내비게이션-->
-                    <Button
-                        android:layout_width="50dp"
-                        android:background="@drawable/ic_launcher_foreground"
-                        android:layout_height="50dp" />
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"/>
-
-                    <!--택시 부르기-->
-                    <Button
-                        android:layout_width="50dp"
-                        android:background="@drawable/ic_launcher_foreground"
-                        android:layout_height="50dp" />
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="match_parent"/>
-
-                    <!--주소 복사-->
-                    <Button
-                        android:layout_width="50dp"
-                        android:background="@drawable/ic_launcher_foreground"
-                        android:layout_height="50dp" />
             </LinearLayout>
 
-        </LinearLayout>
+            <!--길찾기,네비게이션 버튼 등-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
 
+                <!--길찾기-->
+                <Button
+                    android:id="@+id/btFindLoad"
+                    android:onClick="onClickListener"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="#f26657"
+                    android:text="길찾기" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <!--내비게이션-->
+                <Button
+                    android:id="@+id/btNavi"
+                    android:onClick="onClickListener"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="#f26657"
+                    android:text="네비게이션" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <!--택시 부르기-->
+                <Button
+                    android:id="@+id/btCallTaxi"
+                    android:onClick="onClickListener"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="#f26657"
+                    android:text="택시부르기" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <!--주소 복사-->
+                <Button
+                    android:id="@+id/btCopyLink"
+                    android:onClick="onClickListener"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="#f26657"
+                    android:text="주소복사" />
+            </LinearLayout>
+
+            <!--식당의 주소-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="주소" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="서울 서초구 서초동 반포대로 10길 20" />
+            </LinearLayout>
+
+            <!--영업시간-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="영업시간" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="평일 10:00 ~ 23:00" />
+            </LinearLayout>
+
+            <!--전화번호-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="전화번호" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="02-2098-2092" />
+            </LinearLayout>
+
+            <!--homepage-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="홈페이지" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="www.dsakjin.com" />
+            </LinearLayout>
+
+            <!--가격-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="가격" />
+
+                <!--이 리니어에서 TextView를 inflate-->
+                <LinearLayout
+                    android:id="@+id/llMenuText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="고등어 구이 1,2000원" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="고등어 구이 1,2000원" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="고등어 구이 1,2000원" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--=========이 안에 내용물 작성==========-->
+        </LinearLayout>
     </ScrollView>
 
 

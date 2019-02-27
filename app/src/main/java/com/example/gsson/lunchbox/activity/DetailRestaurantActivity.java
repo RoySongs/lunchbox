@@ -1,6 +1,7 @@
 package com.example.gsson.lunchbox.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.view.View;
 import android.widget.TextView;
 
@@ -34,6 +35,22 @@ public class DetailRestaurantActivity extends AbstBaseActivity {
             case R.id.llBack:
                 showToastShort("test toast");
                 break;
+                //길찾기
+            case R.id.btFindLoad:
+                findLoad();
+                break;
+                //네비게이션
+            case R.id.btNavi:
+                showToastShort("test toast");
+                break;
+                //택시부르기
+            case R.id.btCallTaxi:
+                showToastShort("test toast");
+                break;
+                //주소 복사
+            case R.id.btCopyLink:
+                showToastShort("test toast");
+                break;
             default:
                 break;
         }
@@ -52,5 +69,10 @@ public class DetailRestaurantActivity extends AbstBaseActivity {
         } else {
             tvMenuName.setText(menuName);
         }
+    }
+
+    private void findLoad() {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:37.5,127.0"));
+        startActivity(intent);
     }
 }
