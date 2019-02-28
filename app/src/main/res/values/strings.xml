@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">lunchbox</string>
+    <string name="home">Home</string>
+    <string name="search">search</string>
+    <string name="setting">setting</string>
+    <string name="alarm">alarm</string>
+    <string name="profile">profile</string>
 
 
     <!--<로이작성>-->
@@ -21,6 +26,8 @@
     <!--</지연작성>-->
     <string name="back_dialog_title">런치박스를 종료하시겠습니까?</string>
     <string name="menu_picker_start">런치 메뉴박스 PLAY</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="searchBtn">지연검색</string>
     <!--</지연작성>-->
 
 </resources>
