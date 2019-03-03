@@ -1,4 +1,4 @@
-package com.example.gsson.lunchbox.activity;
+package lunchbox.csy.com.lunchbox.activity;
 
 import android.app.Dialog;
 import android.content.ComponentName;
@@ -13,7 +13,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.gsson.lunchbox.R;
+import lunchbox.csy.com.lunchbox.R;
+
 
 public class DetailViewActivity extends AppCompatActivity{
 
@@ -29,16 +30,16 @@ public class DetailViewActivity extends AppCompatActivity{
                 case R.id.navigation_home:
                     mTextMessage.setText(R.string.title_home);
                     return true;
-                case R.id.navigation_dashboard:
+                case R.id.navigation_alarm:
                     mTextMessage.setText(R.string.title_dashboard);
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_search:
                     mTextMessage.setText(R.string.title_notifications);
                     return true;
-                case R.id.navigation_home2:
+                case R.id.navigation_profile:
                     mTextMessage.setText(R.string.title_home);
                     return true;
-                case R.id.navigation_dashboard2:
+                case R.id.navigation_setting:
                     mTextMessage.setText(R.string.title_dashboard);
                     return true;
 
