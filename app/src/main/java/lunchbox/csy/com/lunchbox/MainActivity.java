@@ -19,10 +19,10 @@ import android.widget.Toast;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
-import lunchbox.csy.com.lunchbox.alarm.AlarmFragment;
 import lunchbox.csy.com.lunchbox.base.AbstBaseActivity;
 import lunchbox.csy.com.lunchbox.home.HomeFragment;
 import lunchbox.csy.com.lunchbox.lib.UIlib;
+import lunchbox.csy.com.lunchbox.myplace.MyPlaceFragment;
 import lunchbox.csy.com.lunchbox.profile.ProfileFragment;
 import lunchbox.csy.com.lunchbox.search.SearchFragment;
 import lunchbox.csy.com.lunchbox.setting.SettingFragment;
@@ -80,8 +80,8 @@ public class MainActivity extends AbstBaseActivity {
 
             switch (item.getItemId()) {
 
-                case R.id.navigation_alarm:
-                    MainActivity.this.replaceFragment(AlarmFragment.newInstance());
+                case R.id.navigation_myplace:
+                    MainActivity.this.replaceFragment(MyPlaceFragment.newInstance());
                     MainActivity.this.changeItemColor(0);
                     return false;
                 case R.id.navigation_search:
