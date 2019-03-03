@@ -1,7 +1,5 @@
 package lunchbox.csy.com.lunchbox;
 
-import android.Manifest;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -81,16 +79,17 @@ public class MainActivity extends AbstBaseActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
             switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    MainActivity.this.replaceFragment(HomeFragment.newInstance());
-                    MainActivity.this.changeItemColor(0);
-                    return false;
+
                 case R.id.navigation_alarm:
                     MainActivity.this.replaceFragment(AlarmFragment.newInstance());
-                    MainActivity.this.changeItemColor(1);
+                    MainActivity.this.changeItemColor(0);
                     return false;
                 case R.id.navigation_search:
                     MainActivity.this.replaceFragment(SearchFragment.newInstance());
+                    MainActivity.this.changeItemColor(1);
+                    return false;
+                case R.id.navigation_home:
+                    MainActivity.this.replaceFragment(HomeFragment.newInstance());
                     MainActivity.this.changeItemColor(2);
                     return false;
                 case R.id.navigation_profile:
