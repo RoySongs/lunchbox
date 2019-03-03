@@ -1,6 +1,8 @@
 package lunchbox.csy.com.lunchbox;
 
 import android.Manifest;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
@@ -9,7 +11,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.ImageViewCompat;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -30,6 +34,7 @@ public class MainActivity extends AbstBaseActivity {
 
     private TextView mTextMessage;
     private BottomNavigationViewEx bottomNavigationViewEx;
+    private AlertDialog customdialog;
 
     @Override
     protected void onCreateChild() {
@@ -115,5 +120,33 @@ public class MainActivity extends AbstBaseActivity {
         }
         ImageViewCompat.setImageTintList(bottomNavigationViewEx.getIconAt(position), ColorStateList.valueOf(Color.parseColor("#ff000000")));
     }
+
+
+    DialogInterface.OnClickListener dialogListener = new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+            if (which == DialogInterface.BUTTON_POSITIVE) {
+                finish();
+            }
+        }
+    };
+
+    //지연 종료 다이얼로그
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder backdialog = new AlertDialog.Builder(this);
+        LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+        View view = inflater.inflate(R.layout.activity_back_dialog, null);
+        backdialog.setView(view);
+        backdialog.setCancelable(false);
+        backdialog.setPositiveButton("확인", dialogListener);
+        backdialog.setNegativeButton("취소", null);
+
+
+        customdialog = backdialog.create();
+        customdialog.show();
+
+    }
 }
+
 
