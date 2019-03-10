@@ -2,11 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
     <item
-        android:id="@+id/menu_search"
+        android:id="@+id/menu_alarm"
         android:visible="true"
-        android:title="Search"
-        android:icon="@drawable/button_search"
+        android:title="Alarm"
+        android:icon="@drawable/button_alarm"
         app:showAsAction="always" />
 </menu>
