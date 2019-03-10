@@ -1,4 +1,4 @@
-package lunchbox.csy.com.lunchbox.myplace;
+package lunchbox.csy.com.lunchbox.alarm;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,20 +11,20 @@ import android.view.ViewGroup;
 
 import lunchbox.csy.com.lunchbox.R;
 
-public class MyPlaceFragment extends Fragment {
+public class AlarmFragment extends Fragment {
     private static String TAG = "HomeFragment";
 
-    public static MyPlaceFragment newInstance() {
+    public static AlarmFragment newInstance() {
         // TODO Parameters
-        MyPlaceFragment myPlaceFragment = new MyPlaceFragment();
-        return myPlaceFragment;
+        AlarmFragment alarmFragment = new AlarmFragment();
+        return alarmFragment;
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView");
-        View view = inflater.inflate(R.layout.fragment_myplace, container, false);
+        View view = inflater.inflate(R.layout.fragment_alarm, container, false);
         return view;
     }
 
