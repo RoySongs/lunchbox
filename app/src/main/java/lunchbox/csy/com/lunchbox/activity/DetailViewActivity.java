@@ -1,16 +1,8 @@
 package lunchbox.csy.com.lunchbox.activity;
 
-import android.app.Dialog;
-import android.content.ComponentName;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import lunchbox.csy.com.lunchbox.R;
@@ -21,32 +13,32 @@ public class DetailViewActivity extends AppCompatActivity{
     private TextView mTextMessage;
 
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
-                case R.id.navigation_alarm:
-                    mTextMessage.setText(R.string.title_dashboard);
-                    return true;
-                case R.id.navigation_search:
-                    mTextMessage.setText(R.string.title_notifications);
-                    return true;
-                case R.id.navigation_profile:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
-                case R.id.navigation_setting:
-                    mTextMessage.setText(R.string.title_dashboard);
-                    return true;
-
-            }
-            return false;
-        }
-    };
+//    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+//            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+//
+//        @Override
+//        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//            switch (item.getItemId()) {
+//                case R.id.navigation_home:
+//                    mTextMessage.setText(R.string.title_home);
+//                    return true;
+//                case R.id.navigation_alarm:
+//                    mTextMessage.setText(R.string.title_dashboard);
+//                    return true;
+//                case R.id.navigation_search:
+//                    mTextMessage.setText(R.string.title_notifications);
+//                    return true;
+//                case R.id.navigation_profile:
+//                    mTextMessage.setText(R.string.title_home);
+//                    return true;
+//                case R.id.navigation_setting:
+//                    mTextMessage.setText(R.string.title_dashboard);
+//                    return true;
+//
+//            }
+//            return false;
+//        }
+//    };
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +47,7 @@ public class DetailViewActivity extends AppCompatActivity{
 
             mTextMessage = (TextView) findViewById(R.id.message);
             BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-            navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+//            navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
 //            //    다이얼로그로 이미지 띄우기
 //            Dialog dialog = new Dialog(this);
