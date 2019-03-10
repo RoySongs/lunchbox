@@ -13,10 +13,18 @@
     <string name="setting_main_category1">서비스 안내</string>
     <string name="setting_main_category2">약관 및 정책</string>
     <string name="setting_main_category3">고객센터</string>
-    <string name="setting_sub_category1">공지사항</string>
-    <string name="setting_sub_category2">버전 정보</string>
-    <string name="setting_sub_category3">위치기반 서비스 이용약관</string>
+    <string name="setting_sub1_category1">공지사항</string>
+    <string name="setting_sub1_category2">버전 정보</string>
+    <string name="setting_versionVal">( 1.0.0 )</string>
+    <string name="setting_sub2_category1">서비스 이용약관</string>
+    <string name="setting_sub2_category2">개인정보처리방침</string>
+    <string name="setting_sub2_category3">위치기반 서비스 이용약관</string>
+    <string name="setting_sub3_category1">1:1 문의하기</string>
     <string name="title_activity_setting_fragment">SettingFragment</string>
+    <string name="title_activity_setting_fragment_notice">SettingFragmentNotice</string>
+    <string name="title_activity_setting_fragment_service">SettingFragmentService</string>
+    <string name="title_activity_setting_fragment_personal">SettingFragmentPersonal</string>
+    <string name="title_activity_setting_fragment_gps">SettingFragmentGps</string>
     <!--</로이작성>-->
 
     <!--<가람작성>-->

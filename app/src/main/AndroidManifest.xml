@@ -4,15 +4,34 @@
     package="lunchbox.csy.com.lunchbox">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
 
     <application
-        android:allowBackup="true"
+    android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity
+            android:name=".setting.SettingFragmentGps"
+            android:label="@string/title_activity_setting_fragment_gps"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".setting.SettingFragmentPersonal"
+            android:label="@string/title_activity_setting_fragment_personal"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".setting.SettingFragmentService"
+            android:label="@string/title_activity_setting_fragment_service"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".setting.SettingFragmentNotice"
+            android:label="@string/title_activity_setting_fragment_notice"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.MenuPickerActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,6 +55,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver android:name=".alarm.AlarmReceiver" />
+
     </application>
 
 </manifest>

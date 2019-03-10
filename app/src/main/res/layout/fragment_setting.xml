@@ -4,27 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_launcher_foreground"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/setting_name"
-            android:textSize="30dp"
-            android:layout_marginTop="10dp"/>
-    </LinearLayout>
+
 
     <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -33,37 +19,51 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/setting_main_category1"
+            style="@style/setting_text_left"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </android.support.constraint.ConstraintLayout>
+    <View android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="@color/color_dark"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
+
     <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/setting_sub_notice"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/setting_notice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/setting_sub_category1"
+            android:text="@string/setting_sub1_category1"
+            style="@style/setting_text_left"
+            android:paddingLeft="20dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_height="wrap_content"
+
+        <ImageView
             android:layout_width="wrap_content"
-            style="@style/setting_link_text"
-            android:text="@string/setting_name"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_forward_small"
+            android:background="#00FFFFFF"
+            style="@style/setting_text_right"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent" />
+            app:layout_constraintRight_toRightOf="parent"/>
+
     </android.support.constraint.ConstraintLayout>
     <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -71,71 +71,137 @@
             android:id="@+id/setting_versionInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/setting_sub_category2"
+            android:text="@string/setting_sub1_category2"
+            android:paddingLeft="20dp"
+            style="@style/setting_text_left"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
+            android:id="@+id/setting_versionVal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/setting_name"
-            android:textSize="15dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            />
+            android:text="@string/setting_versionVal"
+            android:paddingLeft="5dp"
+            android:textSize="13dp"
+            app:layout_constraintLeft_toRightOf="@id/setting_versionInfo"
+            app:layout_constraintBottom_toBottomOf="@id/setting_versionInfo" />
+
+
     </android.support.constraint.ConstraintLayout>
     <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/setting_policy"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/setting_policy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/setting_main_category2"
+            style="@style/setting_text_left"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/setting_name"
-            android:textSize="15dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            />
+
     </android.support.constraint.ConstraintLayout>
+    <View android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="@color/color_dark"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
+
     <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/setting_sub_service"
+        android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/setting_gpsInfo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/setting_sub_category3"
+            android:text="@string/setting_sub2_category1"
+            style="@style/setting_text_left"
+            android:paddingLeft="20dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/setting_name"
-            android:textSize="15dp"
+            android:src="@drawable/arrow_forward_small"
+            android:background="#00FFFFFF"
+            style="@style/setting_text_right"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            />
+            app:layout_constraintRight_toRightOf="parent"/>
     </android.support.constraint.ConstraintLayout>
     <android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/setting_sub_personal"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/setting_sub2_category2"
+            style="@style/setting_text_left"
+            android:paddingLeft="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_forward_small"
+            android:background="#00FFFFFF"
+            style="@style/setting_text_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/setting_sub_gpsInfo"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/setting_sub2_category3"
+            style="@style/setting_text_left"
+            android:paddingLeft="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_forward_small"
+            android:background="#00FFFFFF"
+            style="@style/setting_text_right"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+    </android.support.constraint.ConstraintLayout>
+
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -144,16 +210,44 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/setting_main_category3"
+            style="@style/setting_text_left"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+    <View android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:background="@color/color_dark"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/setting_sub_requestion"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/setting_name"
-            android:textSize="15dp"
+            android:text="@string/setting_sub3_category1"
+            style="@style/setting_text_left"
+            android:paddingLeft="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_forward_small"
+            android:background="#00FFFFFF"
+            style="@style/setting_text_right"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            />
+            app:layout_constraintRight_toRightOf="parent"/>
     </android.support.constraint.ConstraintLayout>
+
+
+
 </android.widget.LinearLayout>
