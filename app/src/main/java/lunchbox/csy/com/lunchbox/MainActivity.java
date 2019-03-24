@@ -67,6 +67,10 @@ public class MainActivity extends AbstBaseActivity {
     @Override
     public void onClickListener(View v) {
         switch (v.getId()) {
+            case R.id.menu_alarm:
+                MainActivity.this.replaceFragment(AlarmFragment.newInstance());
+                MainActivity.this.changeItemColor(0); break;
+
 //            case R.id.button1:
 //                break;
 //                default:
