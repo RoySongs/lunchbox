@@ -25,6 +25,12 @@
     <string name="title_activity_setting_fragment_service">SettingFragmentService</string>
     <string name="title_activity_setting_fragment_personal">SettingFragmentPersonal</string>
     <string name="title_activity_setting_fragment_gps">SettingFragmentGps</string>
+
+    <string name="search_detail_price">가격</string>
+    <string name="search_detail_category">음식 분류</string>
+    <string name="search_detail_dist">거리(도보 기준)</string>
+
+
     <!--</로이작성>-->
 
     <!--<가람작성>-->

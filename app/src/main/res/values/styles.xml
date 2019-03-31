@@ -29,6 +29,11 @@
         <item name="android:textSize">15dp</item>
         <item name="android:paddingRight">15dp</item>
     </style>
+
+    <style name="search_title">
+        <item name="android:textSize">20dp</item>
+        <item name="android:paddingLeft">15dp</item>
+    </style>
     <!-- /로이 작성 -->
 
 
