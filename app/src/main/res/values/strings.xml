@@ -5,7 +5,18 @@
     <string name="setting">setting</string>
     <string name="myplace">myplace</string>
     <string name="profile">profile</string>
-
+    <string name="create_new_account">이메일로 초간단 가입</string>
+    <string name="Log_In">이미 회원이세요? 로그인</string>
+    <string name="send_email">Send email</string>
+    <string name="full_name">Full name</string>
+    <string name="code">CODE</string>
+    <string name="next">Next</string>
+    <string name="email">Email</string>
+    <string name="cpassword">Password</string>
+    <string name="create_google">구글계정으로 1초만에 가입</string>
+    <string name="create_email">이메일로 초간단 가입</string>
+    <string name="create_facebook">페이스북으로 1초만에 가입</string>
+    <string name="create_kakao">카카오계정으로 1초만에 가입</string>
 
     <!--<로이작성>-->
     <string name="title_activity_setting">SettingActivity</string>

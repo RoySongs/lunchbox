@@ -15,8 +15,9 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
@@ -34,15 +35,29 @@ public class MainActivity extends AbstBaseActivity {
     private TextView mTextMessage;
     private BottomNavigationViewEx bottomNavigationViewEx;
     private AlertDialog customdialog;
+    private ProgressBar progressBar;
+    RelativeLayout splash;
 
     @Override
     protected void onCreateChild() {
         UIlib.getInstance(this).setHideNavigation(true);
         UIlib.getInstance(this).setStatusBarColor(getResources().getColor(R.color.grey));
-
         setContentView(R.layout.activity_main);
 
-        Toast.makeText(this, "Sign-in Success.", Toast.LENGTH_SHORT).show();
+        Log.d("FFFFF", "after LOGIN");
+
+//        progressBar = (ProgressBar)findViewById(R.id.progressBar);
+//        progressBar.setVisibility(progressBar.VISIBLE);
+//        splash = findViewById(R.id.splash);
+//
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                Animation anim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.fadeout);
+//                splash.startAnimation(anim);
+//                splash.setVisibility(View.GONE);
+//            }
+//        }, 5000);
 
         mTextMessage = findViewById(R.id.message);
         bottomNavigationViewEx = findViewById(R.id.navigation);
@@ -55,7 +70,7 @@ public class MainActivity extends AbstBaseActivity {
                 .setTextVisibility(false) // Hide Text.
                 .setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         replaceFragment(HomeFragment.newInstance());
-        changeItemColor(0);
+        changeItemColor(2);
     }
 
     @Override
@@ -67,10 +82,6 @@ public class MainActivity extends AbstBaseActivity {
     @Override
     public void onClickListener(View v) {
         switch (v.getId()) {
-            case R.id.menu_alarm:
-                MainActivity.this.replaceFragment(AlarmFragment.newInstance());
-                MainActivity.this.changeItemColor(0); break;
-
 //            case R.id.button1:
 //                break;
 //                default:
