@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <include android:id="@+id/home_toolbar" layout="@layout/toolbar" />
 
@@ -10,5 +11,13 @@
         android:layout_height="wrap_content"
         android:text="프로파일"
         android:textSize="50dp"/>
+
+    <Button
+        android:id="@+id/bt01"
+        android:onClick="onClickListener"
+        android:layout_marginTop="100dp"
+        android:layout_width="100dp"
+        android:text="가람_테스트버튼"
+        android:layout_height="100dp" />
 
 </RelativeLayout>

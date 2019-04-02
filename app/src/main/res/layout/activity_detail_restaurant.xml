@@ -49,6 +49,7 @@
 
         <!--타이틀바 중간에 타이틀 이름 배치-->
         <TextView
+            android:id="@+id/tvRestName"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="16dp"
@@ -71,7 +72,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:orientation="vertical">
 
             <!--이미지-->
@@ -95,7 +95,6 @@
 
                     <!--고등어 구이-->
                     <TextView
-                        android:id="@+id/tvMenuName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="고등어 구이"
@@ -109,14 +108,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:text="380"
-                        android:textSize="15sp" />
-
-                    <!--m-->
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="m"
+                        android:text="380m"
                         android:textSize="15sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -281,23 +273,35 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="고등어 구이 1,2000원" />
+                        android:text="고등어 구이 12,000원" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="고등어 구이 1,2000원" />
+                        android:text="고등어 구이 12,000원" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="고등어 구이 1,2000원" />
+                        android:text="고등어 구이 12,000원" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
             <!--=========이 안에 내용물 작성==========-->
+            <!--지도영역-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:orientation="vertical">
+
+                <fragment
+                    android:id="@+id/map"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    class="com.google.android.gms.maps.MapFragment"/>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

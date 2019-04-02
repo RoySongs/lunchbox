@@ -1,5 +1,6 @@
 package lunchbox.csy.com.lunchbox.profile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import lunchbox.csy.com.lunchbox.R;
+import lunchbox.csy.com.lunchbox.activity.DetailRestaurantActivity;
+import lunchbox.csy.com.lunchbox.commons.Const;
 
 public class ProfileFragment extends Fragment {
     private static String TAG = "HomeFragment";
@@ -33,5 +36,15 @@ public class ProfileFragment extends Fragment {
         Log.d(TAG, "onCreate");
         super.onCreate(savedInstanceState);
     }
+
+    //<가람작성>
+    private void moveDetailRestaurant() {
+        Intent i = new Intent(getActivity(), DetailRestaurantActivity.class);
+        i.putExtra(Const.REST_ID, Const.TEMP_REST_VALUE);
+        i.putExtra(Const.REST_NAME, "김밥천국 서초점");
+        i.putExtra("distance", 550);
+        startActivity(i);
+    }
+    //</가람작성>
 
 }
