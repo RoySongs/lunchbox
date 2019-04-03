@@ -26,7 +26,6 @@ public class SearchFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView");
         View view = inflater.inflate(R.layout.fragment_search_detail, container, false);
-        ViewPager viewPager = (ViewPager) view.findViewById(R.id.search_viewPager);
         return view;
     }
 
