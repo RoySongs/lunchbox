@@ -63,6 +63,11 @@
 
         <receiver android:name=".alarm.AlarmReceiver" />
 
+        <!--190402_가람의 맥북프로에서 생성한 api키_조원들 간 협의 필요-->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDE8D0JVFUmxRVRvL5jPeARRm1bNi8_Dwc" />
+
     </application>
 
 </manifest>
