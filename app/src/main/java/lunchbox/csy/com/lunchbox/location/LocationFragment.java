@@ -1,36 +1,35 @@
-package lunchbox.csy.com.lunchbox.profile;
+package lunchbox.csy.com.lunchbox.location;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import java.util.Calendar;
+
 import lunchbox.csy.com.lunchbox.R;
 import lunchbox.csy.com.lunchbox.activity.DetailRestaurantActivity;
+import lunchbox.csy.com.lunchbox.alarm.AlarmReceiver;
 import lunchbox.csy.com.lunchbox.commons.Const;
 
-public class ProfileFragment extends Fragment {
-    private static String TAG = "HomeFragment";
-
-    public static ProfileFragment newInstance() {
-        // TODO Parameters
-        ProfileFragment profileFragment = new ProfileFragment();
-        return profileFragment;
+//190403_가람만듬
+public class LocationFragment extends Fragment {
+    public static LocationFragment newInstance() {
+        LocationFragment locationFragment = new LocationFragment();
+        return locationFragment;
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.d(TAG, "onCreateView");
-        View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        View view = inflater.inflate(R.layout.fragment_location, container, false);
 
-        //<가람작성>
         Button bt01 = (Button)view.findViewById(R.id.bt01);
         bt01.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,18 +41,16 @@ public class ProfileFragment extends Fragment {
                 startActivity(i);
             }
         });
-        //</가람작성>
 
         return view;
     }
 
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        Log.d(TAG, "onCreate");
         super.onCreate(savedInstanceState);
     }
 
-    //<가람작성>
     private void moveDetailRestaurant() {
         Intent i = new Intent(getActivity(), DetailRestaurantActivity.class);
         i.putExtra(Const.REST_ID, Const.TEMP_REST_VALUE);
@@ -61,6 +58,4 @@ public class ProfileFragment extends Fragment {
         i.putExtra("distance", 550);
         startActivity(i);
     }
-    //</가람작성>
-
 }
