@@ -41,7 +41,7 @@ public class ServiceGenerator {
         try {
             retrofit = new Retrofit.Builder()
                     .baseUrl(RemoteService.BASE_URL)
-                    .addConverterFactory(GsonConverterFactory.create(gson))  // 서버에서 json 형식으로 데이터를 보내고 이를 파싱해서 받아옵니
+                    .addConverterFactory(GsonConverterFactory.create(gson))  // 서버에서 json 형식으로 데이터를 보내고 이를 파싱해서 받아옵니다.
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) // 받은 응답을 옵서버블 형태로 변환해 줍니다.
                     .build();
 

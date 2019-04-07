@@ -30,20 +30,6 @@ public class ProfileFragment extends Fragment {
         Log.d(TAG, "onCreateView");
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        //<가람작성>
-        Button bt01 = (Button)view.findViewById(R.id.bt01);
-        bt01.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getActivity(), DetailRestaurantActivity.class);
-                i.putExtra(Const.REST_ID, Const.TEMP_REST_VALUE);
-                i.putExtra(Const.REST_NAME, "아웃백 서초점");
-                i.putExtra("distance", 500);
-                startActivity(i);
-            }
-        });
-        //</가람작성>
-
         return view;
     }
 
@@ -52,15 +38,4 @@ public class ProfileFragment extends Fragment {
         Log.d(TAG, "onCreate");
         super.onCreate(savedInstanceState);
     }
-
-    //<가람작성>
-    private void moveDetailRestaurant() {
-        Intent i = new Intent(getActivity(), DetailRestaurantActivity.class);
-        i.putExtra(Const.REST_ID, Const.TEMP_REST_VALUE);
-        i.putExtra(Const.REST_NAME, "김밥천국 서초점");
-        i.putExtra("distance", 550);
-        startActivity(i);
-    }
-    //</가람작성>
-
 }

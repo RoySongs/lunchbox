@@ -12,12 +12,4 @@
         android:text="프로파일"
         android:textSize="50dp"/>
 
-    <Button
-        android:id="@+id/bt01"
-        android:onClick="onClickListener"
-        android:layout_marginTop="100dp"
-        android:layout_width="100dp"
-        android:text="가람_테스트버튼"
-        android:layout_height="100dp" />
-
 </RelativeLayout>
