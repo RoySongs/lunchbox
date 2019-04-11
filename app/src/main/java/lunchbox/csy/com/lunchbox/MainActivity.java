@@ -15,15 +15,17 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
+import lunchbox.csy.com.lunchbox.alarm.AlarmFragment;
 import lunchbox.csy.com.lunchbox.base.AbstBaseActivity;
 import lunchbox.csy.com.lunchbox.home.HomeFragment;
 import lunchbox.csy.com.lunchbox.lib.UIlib;
-import lunchbox.csy.com.lunchbox.myplace.MyPlaceFragment;
+import lunchbox.csy.com.lunchbox.location.LocationFragment;
 import lunchbox.csy.com.lunchbox.profile.ProfileFragment;
 import lunchbox.csy.com.lunchbox.search.SearchFragment;
 import lunchbox.csy.com.lunchbox.setting.SettingFragment;
@@ -34,15 +36,29 @@ public class MainActivity extends AbstBaseActivity {
     private TextView mTextMessage;
     private BottomNavigationViewEx bottomNavigationViewEx;
     private AlertDialog customdialog;
+    private ProgressBar progressBar;
+    RelativeLayout splash;
 
     @Override
     protected void onCreateChild() {
         UIlib.getInstance(this).setHideNavigation(true);
         UIlib.getInstance(this).setStatusBarColor(getResources().getColor(R.color.grey));
-
         setContentView(R.layout.activity_main);
 
-        Toast.makeText(this, "Sign-in Success.", Toast.LENGTH_SHORT).show();
+        Log.d("FFFFF", "after LOGIN");
+
+//        progressBar = (ProgressBar)findViewById(R.id.progressBar);
+//        progressBar.setVisibility(progressBar.VISIBLE);
+//        splash = findViewById(R.id.splash);
+//
+//        new Handler().postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                Animation anim = AnimationUtils.loadAnimation(MainActivity.this, R.anim.fadeout);
+//                splash.startAnimation(anim);
+//                splash.setVisibility(View.GONE);
+//            }
+//        }, 5000);
 
         mTextMessage = findViewById(R.id.message);
         bottomNavigationViewEx = findViewById(R.id.navigation);
@@ -55,7 +71,7 @@ public class MainActivity extends AbstBaseActivity {
                 .setTextVisibility(false) // Hide Text.
                 .setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         replaceFragment(HomeFragment.newInstance());
-        changeItemColor(0);
+        changeItemColor(2);
     }
 
     @Override
@@ -77,8 +93,19 @@ public class MainActivity extends AbstBaseActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
-        Log.d("test", "onCreateOptionsMenu - 최초 메뉴키를 눌렀을 때 호출됨");
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if(item.getItemId() == R.id.menu_alarm){
+            MainActivity.this.replaceFragment(AlarmFragment.newInstance());
+            return true;
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -89,7 +116,7 @@ public class MainActivity extends AbstBaseActivity {
             switch (item.getItemId()) {
 
                 case R.id.navigation_myplace:
-                    MainActivity.this.replaceFragment(MyPlaceFragment.newInstance());
+                    MainActivity.this.replaceFragment(LocationFragment.newInstance());
                     MainActivity.this.changeItemColor(0);
                     return false;
                 case R.id.navigation_search:
@@ -155,5 +182,3 @@ public class MainActivity extends AbstBaseActivity {
 
     }
 }
-
-

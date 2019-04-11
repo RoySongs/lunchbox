@@ -4,35 +4,24 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.constraint.ConstraintLayout;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.LinearLayout;
 
-import lunchbox.csy.com.lunchbox.base.AbstBaseActivity;
+public class SplashActivity extends Activity {
 
-public class SplashActivity extends AbstBaseActivity {
-    /** Duration of wait **/
     private final int SPLASH_DISPLAY_LENGTH = 1000000;
-    LinearLayout splash;
-    String doCheck;
+    private lunchbox.csy.com.lunchbox.ProgressImageView progressBar;
+    ConstraintLayout splash;
 
     @Override
-    protected void onCreateChild() {
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
         setContentView(R.layout.activity_splash);
 
-        LinearLayout nextClick = (LinearLayout) findViewById(R.id.nextClick);
-        nextClick.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                doCheck = "Y";
-                Intent intent = new Intent(SplashActivity.this, lunchbox.csy.com.lunchbox.MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-
-            }
-        });
-
+        progressBar = findViewById(R.id.progress);
+        progressBar.setVisibility(progressBar.VISIBLE);
         splash = findViewById(R.id.splash);
 
         new Handler().postDelayed(new Runnable() {
@@ -42,23 +31,12 @@ public class SplashActivity extends AbstBaseActivity {
                 splash.startAnimation(anim);
                 splash.setVisibility(View.GONE);
             }
-        }, SPLASH_DISPLAY_LENGTH);
+        }, 5000);
 
-
-//            new Handler().postDelayed(() -> {
-//                Intent mainIntent = new Intent(SplashActivity.this, LoginActivity.class);
-//                SplashActivity.this.startActivity(mainIntent);
-//                SplashActivity.this.finish();
-//            }, SPLASH_DISPLAY_LENGTH);
-    }
-
-    @Override
-    protected void onDestoryChild() {
-
-    }
-
-    @Override
-    public void onClickListener(View v) {
-
+        new Handler().postDelayed(() -> {
+            Intent mainIntent = new Intent(SplashActivity.this, LoginActivity.class);
+            SplashActivity.this.startActivity(mainIntent);
+            SplashActivity.this.finish();
+        }, 5000);
     }
 }

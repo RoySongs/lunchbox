@@ -1,5 +1,6 @@
 package lunchbox.csy.com.lunchbox.profile;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,8 +9,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import lunchbox.csy.com.lunchbox.R;
+import lunchbox.csy.com.lunchbox.activity.DetailRestaurantActivity;
+import lunchbox.csy.com.lunchbox.commons.Const;
 
 public class ProfileFragment extends Fragment {
     private static String TAG = "HomeFragment";
@@ -25,6 +29,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView");
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
         return view;
     }
 
@@ -33,5 +38,4 @@ public class ProfileFragment extends Fragment {
         Log.d(TAG, "onCreate");
         super.onCreate(savedInstanceState);
     }
-
 }

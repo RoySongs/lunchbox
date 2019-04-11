@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:id="@+id/search_detail_price"
+            style="@style/search_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_detail_price"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:useDefaultMargins="false">
+
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/search_btn"
+            android:text="$" />
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/search_btn"
+            android:text="$$" />
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/search_btn"
+            android:text="$$$" />
+
+    </GridLayout>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:id="@+id/search_detail_category"
+            style="@style/search_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_detail_category"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3">
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/search_btn"
+            android:text="한식"/>
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/search_btn"
+            android:text="일식" />
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/search_btn"
+            android:text="중식" />
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/search_btn"
+            android:text="양식" />
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/search_btn"
+            android:text="기타" />
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/search_btn"
+            android:text="전체" />
+    </GridLayout>
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:id="@+id/search_detail_dist"
+            style="@style/search_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_detail_dist"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3">
+
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/search_btn"
+            android:text="5분 이내"/>
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/search_btn"
+            android:text="10분 이내" />
+        <Button
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/search_btn"
+            android:text="15분 이내" />
+    </GridLayout>
+    <Button
+        android:id="@+id/search_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="검색하기"/>
+</android.widget.LinearLayout>
