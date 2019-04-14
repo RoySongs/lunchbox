@@ -1,8 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<GridLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".search.SearchTwoFragment">
-
-</android.support.constraint.ConstraintLayout>
+    android:orientation="horizontal"
+    android:columnCount="1"
+    android:layout_gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton
+            android:layout_height="150dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/sun"/>
+        <ImageButton
+            android:layout_height="150dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/susi"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton
+            android:layout_height="150dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/hesan"/>
+        <ImageButton
+            android:layout_height="150dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:src="@drawable/bude"/>
+    </LinearLayout>
+</GridLayout>
