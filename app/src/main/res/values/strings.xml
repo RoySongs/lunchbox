@@ -62,7 +62,7 @@
     <string name="title_title">런치박스</string>
     <string name="profile_settings">프로필</string>
     <string name="profile_permission">프로필 권한설정</string>
-    <string name="profile_history">프로필 history</ ㄴstring>
+    <string name="profile_history">프로필 history</string>
     <!--석-->
 
 </resources>
