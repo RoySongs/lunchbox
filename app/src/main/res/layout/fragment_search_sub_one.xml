@@ -143,6 +143,14 @@
             android:background="@drawable/search_btn"
             android:text="15분 이내" />
     </GridLayout>
+    <TextView
+        android:id="@+id/category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="korean" />
+
     <Button
         android:id="@+id/search_btn"
         android:layout_width="match_parent"
