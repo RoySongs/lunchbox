@@ -27,18 +27,18 @@ import lunchbox.csy.com.lunchbox.commons.Const;
 //가람담당_식당상세화면
 public class DetailRestaurantActivity extends AbstBaseActivity implements OnMapReadyCallback {
 
-    TextView tvRestName,tvDistance;
+    TextView tvRestName, tvDistance;
 
     @Override
     protected void onCreateChild() {
         setContentView(R.layout.activity_detail_restaurant);
         Common.showLogD("test log debug");
-        tvRestName=(TextView)findViewById(R.id.tvRestName);
-        tvDistance=(TextView)findViewById(R.id.tvDistance);
+        tvRestName = (TextView) findViewById(R.id.tvRestName);
+        tvDistance = (TextView) findViewById(R.id.tvDistance);
 
-        if(isOnline()) {
+        if (isOnline()) {
             String netState = getWhatKindOfNetwork();
-            if(netState.equals(Const.NONE_STATE)) {
+            if (netState.equals(Const.NONE_STATE)) {
                 //인터넷 연결이 안 되어 있으므로 intent로 상점정보 나타냄
                 getIntentData();
             } else {
@@ -59,7 +59,7 @@ public class DetailRestaurantActivity extends AbstBaseActivity implements OnMapR
 
         //google map
         FragmentManager fragmentManager = getFragmentManager();
-        MapFragment mapFragment = (MapFragment)fragmentManager.findFragmentById(R.id.map);
+        MapFragment mapFragment = (MapFragment) fragmentManager.findFragmentById(R.id.map);
 
         mapFragment.getMapAsync(this);
     }
@@ -73,7 +73,7 @@ public class DetailRestaurantActivity extends AbstBaseActivity implements OnMapR
     public void onClickListener(View v) {
         switch (v.getId()) {
             case R.id.llBack:
-                showToastShort("test toast");
+                finish();
                 break;
             //길찾기
             case R.id.btFindLoad:
@@ -124,13 +124,13 @@ public class DetailRestaurantActivity extends AbstBaseActivity implements OnMapR
 
     //인터넷 환경이 안 될 경우 intent로 넘긴 값으로 식당 상세보기 보여줌
     private String getWhatKindOfNetwork() {
-        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activityNetwork = connectivityManager.getActiveNetworkInfo();
 
         if (activityNetwork != null) {
-            if(activityNetwork.getType() == ConnectivityManager.TYPE_WIFI) {
+            if (activityNetwork.getType() == ConnectivityManager.TYPE_WIFI) {
                 return Const.WIFI_STATE;
-            } else if(activityNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
+            } else if (activityNetwork.getType() == ConnectivityManager.TYPE_MOBILE) {
                 return Const.MOBILE_STATE;
             }
         }
@@ -138,11 +138,11 @@ public class DetailRestaurantActivity extends AbstBaseActivity implements OnMapR
         return Const.NONE_STATE;
     }
 
-    private class CheckConnect extends Thread{
+    private class CheckConnect extends Thread {
         private boolean success;
         private String host;
 
-        public CheckConnect(String host){
+        public CheckConnect(String host) {
             this.host = host;
         }
 
@@ -151,24 +151,23 @@ public class DetailRestaurantActivity extends AbstBaseActivity implements OnMapR
 
             HttpURLConnection conn = null;
             try {
-                conn = (HttpURLConnection)new URL(host).openConnection();
-                conn.setRequestProperty("User-Agent","Android");
+                conn = (HttpURLConnection) new URL(host).openConnection();
+                conn.setRequestProperty("User-Agent", "Android");
                 conn.setConnectTimeout(1000);
                 conn.connect();
                 int responseCode = conn.getResponseCode();
-                if(responseCode == 204) success = true;
+                if (responseCode == 204) success = true;
                 else success = false;
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 e.printStackTrace();
                 success = false;
             }
-            if(conn != null){
+            if (conn != null) {
                 conn.disconnect();
             }
         }
 
-        public boolean isSuccess(){
+        public boolean isSuccess() {
             return success;
         }
 
@@ -177,10 +176,10 @@ public class DetailRestaurantActivity extends AbstBaseActivity implements OnMapR
     private boolean isOnline() {
         CheckConnect cc = new CheckConnect(Const.CONNECTION_CONFIRM_CLIENT_URL);
         cc.start();
-        try{
+        try {
             cc.join();
             return cc.isSuccess();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return false;
