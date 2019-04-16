@@ -3,6 +3,8 @@ package lunchbox.csy.com.lunchbox.remote;
 import lunchbox.csy.com.lunchbox.item.MemberItem;
 import lunchbox.csy.com.lunchbox.model.BasicResult;
 import lunchbox.csy.com.lunchbox.model.LoginResult;
+import lunchbox.csy.com.lunchbox.item.SearchItem;
+import lunchbox.csy.com.lunchbox.model.SearchResult;
 import lunchbox.csy.com.lunchbox.model.SignUpData;
 import lunchbox.csy.com.lunchbox.model.SignUpResult;
 import retrofit2.Call;
@@ -11,6 +13,7 @@ import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.HTTP;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Query;
@@ -19,7 +22,7 @@ public interface RemoteService {
     String TAG = RemoteService.class.getSimpleName();
 
     // ★★★ push 시에 주의할 것
-    String BASE_URL = "http://13.209.68.137:3000";
+    String BASE_URL = "http://13.125.45.92:3000";
 
     @POST("/member")
     Call<SignUpResult> insertMember(@Body SignUpData signUpData);
@@ -60,4 +63,8 @@ public interface RemoteService {
 //    @Multipart
 //    @POST ("/image")
 //    Call<ImagePostResult> uploadFeedImage(@Part MultipartBody.Part file);
+
+    @GET("/search/read")
+    Call<SearchResult> getSearchData(@Query("category") String category);
+
 }
