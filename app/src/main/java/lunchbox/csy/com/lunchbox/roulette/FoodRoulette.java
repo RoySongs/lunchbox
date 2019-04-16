@@ -29,7 +29,7 @@ public class FoodRoulette extends AppCompatActivity {
         setContentView(R.layout.activity_food_roulette);
 
         images = new ArrayList<>();
-        final CarouselLayoutManager layoutManager = new CarouselLayoutManager(CarouselLayoutManager.HORIZONTAL, true);
+        final CarouselLayoutManager layoutManager = new CarouselLayoutManager(CarouselLayoutManager.VERTICAL, true);
         layoutManager.setPostLayoutListener(new CarouselZoomPostLayoutListener());
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(layoutManager);
@@ -40,20 +40,64 @@ public class FoodRoulette extends AppCompatActivity {
         recyclerView.setAdapter(mAdapter);
 
         recyclerView.addOnScrollListener(new CenterScrollListener());
-        images.add(R.drawable.bourne);
-        images.add(R.drawable.bvs);
-        images.add(R.drawable.cacw);
-        images.add(R.drawable.deadpool);
-        images.add(R.drawable.doctor);
-        images.add(R.drawable.hunger);
-        images.add(R.drawable.xmen);
+
+        images.add(R.drawable.bbu);
+        images.add(R.drawable.betnam);
+        images.add(R.drawable.bokk);
+        images.add(R.drawable.bossam);
+        images.add(R.drawable.bude);
+        images.add(R.drawable.cal);
+        images.add(R.drawable.care);
+        images.add(R.drawable.chicken);
+        images.add(R.drawable.darkbokk);
+        images.add(R.drawable.darkgal);
+        images.add(R.drawable.darkgom);
+        images.add(R.drawable.ddokbul);
+        images.add(R.drawable.don);
+        images.add(R.drawable.duck);
+        images.add(R.drawable.gimbab);
+        images.add(R.drawable.hesan);
+        images.add(R.drawable.hotdog);
+        images.add(R.drawable.mandu);
+        images.add(R.drawable.momil);
+        images.add(R.drawable.muk);
+        images.add(R.drawable.nang);
+        images.add(R.drawable.ozing);
+        images.add(R.drawable.pasta);
+        images.add(R.drawable.pat);
+        images.add(R.drawable.pizza1);
+        images.add(R.drawable.pizza2);
+        images.add(R.drawable.ramen);
+        images.add(R.drawable.ramen2);
+        images.add(R.drawable.salad);
+        images.add(R.drawable.samge);
+        images.add(R.drawable.samgub);
+        images.add(R.drawable.sand);
+        images.add(R.drawable.sul);
+        images.add(R.drawable.sun);
+        images.add(R.drawable.sunde);
+        images.add(R.drawable.taco);
+        images.add(R.drawable.tangsuyuk);
+        images.add(R.drawable.udong);
+        images.add(R.drawable.uk);
+        images.add(R.drawable.zanch);
+        images.add(R.drawable.zeuk);
+        images.add(R.drawable.zza);
+        images.add(R.drawable.zzimdak);
+        images.add(R.drawable.zzor);
+
+
+
+
+
+
 
         Button buttonRed = (Button) findViewById(R.id.button) ;
         buttonRed.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final int speedScroll = 100;
-                final int stopTime = 10000;
+                final int speedScroll = 10;
+                final int stopTime = 1000;
                 final Handler handler = new Handler();
 
                 //롤링 시작
@@ -81,5 +125,7 @@ public class FoodRoulette extends AppCompatActivity {
                 handler.postDelayed(stop_runnable,stopTime);
             }
         }) ;
+
+
     }
 }
