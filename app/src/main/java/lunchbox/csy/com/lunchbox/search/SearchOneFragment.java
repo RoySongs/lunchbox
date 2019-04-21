@@ -1,5 +1,6 @@
 package lunchbox.csy.com.lunchbox.search;
 
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -28,9 +29,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class SearchOneFragment extends Fragment implements View.OnClickListener{
 
     RemoteService remoteService;
-    TextView category;
-    SearchItem searchItem;
-
+    EditText searchWord;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
@@ -40,7 +39,7 @@ public class SearchOneFragment extends Fragment implements View.OnClickListener{
         searchBtn.setOnClickListener(this);
 
         //category = view.findViewById()
-        category = view.findViewById(R.id.category);
+        searchWord = view.findViewById(R.id.searchWord);
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -61,14 +60,15 @@ public class SearchOneFragment extends Fragment implements View.OnClickListener{
            // searchItem= new SearchItem("", "",category.getText().toString());
            // searchItem= new SearchItem("korean", "korean","korean");
 
-            Call<SearchResult> searchList = remoteService.getSearchData(category.getText().toString());
+            Call<SearchResult> searchList = remoteService.getSearchData(searchWord.getText().toString());
             searchList.enqueue(new Callback<SearchResult>() {
                 @Override
                 public void onResponse(Call<SearchResult> call, Response<SearchResult> response) {
                     SearchResult requestResult = response.body();
                     switch (requestResult.getCode()) {
                         case 200:
-                            Toast.makeText(getActivity(), requestResult.getMessage(), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getActivity(), response.body().toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), requestResult.toString(), Toast.LENGTH_SHORT).show();
                             break;
                         case 401:
                             Toast.makeText(getActivity(), requestResult.getMessage(), Toast.LENGTH_SHORT).show();
