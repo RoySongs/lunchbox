@@ -176,7 +176,7 @@ public class FoodRoulette extends AppCompatActivity {
                         msg.putExtra(Intent.EXTRA_TEXT, "♥오늘의 점심메뉴는 오리구이 입니다♥");
                         msg.putExtra(Intent.EXTRA_TITLE, "제목");
                         msg.setType("text/plain");
-                        startActivity(Intent.createChooser(msg, "공유하기"));
+                        startActivity(Intent.createChooser(msg, "공유하기냠냠"));
 
 
                     }else if(dialog==alertDialog && which==DialogInterface.BUTTON_NEGATIVE){
