@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SearchView;
 
 import lunchbox.csy.com.lunchbox.R;
 
@@ -31,8 +30,8 @@ public class SearchFragment extends Fragment implements TabLayout.OnTabSelectedL
         View view = inflater.inflate(R.layout.fragment_search_main, container, false);
 
         viewPager = (ViewPager)view.findViewById(R.id.viewPager_search);
-        SearchViewAdapter searchViewAdapter = new SearchViewAdapter(getChildFragmentManager());
-        viewPager.setAdapter(searchViewAdapter);
+        SearchViewPagerAdapter searchViewPagerAdapter = new SearchViewPagerAdapter(getChildFragmentManager());
+        viewPager.setAdapter(searchViewPagerAdapter);
 
         tabLayout = (TabLayout) view.findViewById(R.id.search_tablayout);
         tabLayout.setupWithViewPager(viewPager);
