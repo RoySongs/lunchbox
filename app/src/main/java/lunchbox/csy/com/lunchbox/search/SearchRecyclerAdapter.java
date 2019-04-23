@@ -1,6 +1,7 @@
 package lunchbox.csy.com.lunchbox.search;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,8 @@ import android.view.ViewGroup;
 import java.util.List;
 
 import lunchbox.csy.com.lunchbox.R;
+import lunchbox.csy.com.lunchbox.SplashActivity;
+import lunchbox.csy.com.lunchbox.activity.MenuPickerActivity;
 
 public class SearchRecyclerAdapter extends RecyclerView.Adapter<SearchViewHolder> {
 
@@ -40,6 +43,14 @@ public class SearchRecyclerAdapter extends RecyclerView.Adapter<SearchViewHolder
     public void onBindViewHolder(@NonNull SearchViewHolder searchViewHolder, int i) {
 
         searchViewHolder.imageView.setImageResource(list.get(i).getImageSrc());
+        searchViewHolder.imageView.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext() , MenuPickerActivity.class);
+                v.getContext().startActivity(intent);
+
+            }
+        });
     }
 
     @Override
