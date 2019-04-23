@@ -6,15 +6,16 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.ArrayList;
 
-public class SearchViewAdapter extends FragmentPagerAdapter{
+public class SearchViewPagerAdapter extends FragmentPagerAdapter{
 
-    private String titles[] = new String[]{"상세검색","추천메뉴"};
+    private String titles[] = new String[]{"상세검색","메뉴모음","추천코스"};
     ArrayList<Fragment> subFragments;
-    public SearchViewAdapter(FragmentManager fm) {
+    public SearchViewPagerAdapter(FragmentManager fm) {
         super(fm);
         subFragments = new ArrayList<>();
         subFragments.add(new SearchOneFragment());
         subFragments.add(new SearchTwoFragment());
+        subFragments.add(new SearchThirdFragment());
     }
 
     @Override
