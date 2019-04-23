@@ -7,8 +7,10 @@ import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.azoft.carousellayoutmanager.CarouselLayoutManager;
@@ -96,6 +98,7 @@ public class FoodRoulette extends AppCompatActivity {
 
 
 
+
         final int speedScroll = 100;
         final int stopTime = 10000;
         final Handler handler = new Handler();
@@ -140,21 +143,25 @@ public class FoodRoulette extends AppCompatActivity {
                 final Runnable dialogdelay = new Runnable() {
                     @Override
                     public void run() {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(FoodRoulette.this);
-                        //builder.setIcon(R.drawable.salad);
-                        builder.setTitle("당첨");
-                        builder.setMessage("메뉴 이름이 나와야하는자리");
-                        builder.setPositiveButton("공유하기", dialogListener);
-                        builder.setNegativeButton("다시하기", dialogListener);
+
+                        Toast.makeText(FoodRoulette.this, "사진을 클릭하면 더 많은 주변목록을 불러옵니다", Toast.LENGTH_SHORT).show();
+
+                        final AlertDialog.Builder builder=new AlertDialog.Builder(FoodRoulette.this);
+                        LayoutInflater inflater=(LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
+                        View view=inflater.inflate(R.layout.activity_menu_picker_result_dialog,null);
+
+                        builder.setView(view);
                         builder.setCancelable(false);
 
+                        builder.setPositiveButton("결과 공유하기",dialogListener);
+                        builder.setNegativeButton("-Replay-",dialogListener);
 
-                        alertDialog = builder.create();
+                        alertDialog=builder.create();
                         alertDialog.show();
                     }
 
                 };
-                handler.postDelayed(dialogdelay, 1000);
+                handler.postDelayed(dialogdelay, 2000);
 
 
 
@@ -184,6 +191,8 @@ public class FoodRoulette extends AppCompatActivity {
                     }
                 }
             };
+
+
         }) ;
 
 
