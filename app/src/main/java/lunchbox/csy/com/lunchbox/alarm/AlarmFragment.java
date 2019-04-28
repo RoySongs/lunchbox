@@ -5,6 +5,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -40,7 +41,7 @@ public class AlarmFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        Log.d(TAG, "onCreateView");
+        Log.d(TAG, "Alarm onCreateView");
         View view = inflater.inflate(R.layout.fragment_alarm, container, false);
 
         alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
@@ -99,6 +100,11 @@ public class AlarmFragment extends Fragment {
                 getActivity().sendBroadcast(alarmIntent);
             }
         });
+
+        SharedPreferences sharedPreferences = this.getActivity().getSharedPreferences("pref",Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean("alarmYn",true);
+        editor.commit();
         return view;
     }
 

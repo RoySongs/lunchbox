@@ -1,6 +1,7 @@
 package lunchbox.csy.com.lunchbox;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.support.annotation.NonNull;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
 import lunchbox.csy.com.lunchbox.alarm.AlarmFragment;
+import lunchbox.csy.com.lunchbox.alarm.AlarmPreferenceActivity;
 import lunchbox.csy.com.lunchbox.base.AbstBaseActivity;
 import lunchbox.csy.com.lunchbox.home.HomeFragment;
 import lunchbox.csy.com.lunchbox.lib.UIlib;
@@ -100,7 +102,8 @@ public class MainActivity extends AbstBaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
 
         if(item.getItemId() == R.id.menu_alarm){
-            MainActivity.this.replaceFragment(AlarmFragment.newInstance());
+            startActivity(new Intent(MainActivity.this, AlarmPreferenceActivity.class));
+            //MainActivity.this.replaceFragment(AlarmFragment.newInstance());
             return true;
         }
 

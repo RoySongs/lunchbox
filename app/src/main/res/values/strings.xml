@@ -63,6 +63,9 @@
     <string name="profile_settings">프로필</string>
     <string name="profile_permission">프로필 권한설정</string>
     <string name="profile_history">프로필 history</string>
+    <string name="alarm_title">알람을 설정해보세요</string>
+    <string name="alarmYn">alarmYn</string>
+    <string name="settingAlarm">알람 설정</string>
     <!--석-->
 
 </resources>
