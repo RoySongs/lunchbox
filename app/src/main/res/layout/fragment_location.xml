@@ -20,6 +20,12 @@
         android:id="@+id/bt01"
         android:text="test Button"/>
 
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:id="@+id/btGps"
+        android:text="gps Button"/>
+
     <!--지도영역-->
     <LinearLayout
         android:layout_width="match_parent"

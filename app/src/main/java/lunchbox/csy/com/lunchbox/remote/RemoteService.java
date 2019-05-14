@@ -67,4 +67,9 @@ public interface RemoteService {
     @GET("/search/read")
     Call<SearchResult> getSearchData(@Query("category") String category);
 
+    //<가람작성>
+    @POST("/selectlocation")
+    Call<MemberItem> selectLocationInfo(@Query("myLatitude") double myLatitude, @Query("myLongitude") double myLongitude);
+    //</가람작성>
+
 }
