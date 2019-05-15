@@ -74,6 +74,37 @@ app.post('/register/', (req, res, next)=>{
 
 });
 
+//add1
+//<가람작성>
+app.post('/selectlocation', (req, res, next) => {
+    var post_data = req.body;
+    var myLatitude = post_data.myLatitude;
+    var myLongitude = post_data.myLongitude;
+
+    var query = 
+    'SELECT * (6371 * acos(cos(radians(?)) *' +
+    'cos(radians(lastlatitude)) *' +
+    'cos(radians(lastlongitude)) -' +
+    'radians(?)) +' +
+    'sin(radians(?)) *' +
+    'sin(radians(lastlatitude)))) AS distance' +
+    'FROM userinfo' +
+    'HAVING distance <= 5' +
+    'ORDER BY distance' +
+    'LIMIT 0,5000'
+    ;
+
+    con.query(query, [myLatitude, myLatitude, myLongitude], function(err, result, fields) {
+        con.on('error', function (err) {
+            console.log('SQL Error: ', err);
+            res.json('Register error: ', err);
+        });
+        res.json('SELECT location successful');
+    });
+});
+//</가람작성>
+//add2
+
 
 //Start Server
 app.listen(3000, ()=>{

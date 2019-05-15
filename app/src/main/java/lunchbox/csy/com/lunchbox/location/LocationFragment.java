@@ -38,6 +38,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.gson.JsonObject;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -50,6 +51,7 @@ import lunchbox.csy.com.lunchbox.alarm.AlarmReceiver;
 import lunchbox.csy.com.lunchbox.commons.Common;
 import lunchbox.csy.com.lunchbox.commons.Const;
 import lunchbox.csy.com.lunchbox.googleMap.MarkerItem;
+import lunchbox.csy.com.lunchbox.item.GpsItem;
 import lunchbox.csy.com.lunchbox.item.MemberItem;
 import lunchbox.csy.com.lunchbox.lib.GpsInfo;
 import lunchbox.csy.com.lunchbox.remote.RemoteService;
@@ -68,8 +70,8 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback,
     private TextView tvMarker;
 
     //permission
-    private final int PERMISSIONS_ACCESS_FINE_LOCATION=1000;
-    private final int PERMISSIONS_ACCESS_COARSE_LOCATION=1001;
+    private final int PERMISSIONS_ACCESS_FINE_LOCATION = 1000;
+    private final int PERMISSIONS_ACCESS_COARSE_LOCATION = 1001;
 
     private boolean isAccessFineLocation = false;
     private boolean isAccessCoarseLocation = false;
@@ -77,6 +79,8 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback,
 
     //GPSTracker class
     private GpsInfo gps;
+
+    private double latitude, longitude;
 
     public static LocationFragment newInstance() {
         LocationFragment locationFragment = new LocationFragment();
@@ -108,18 +112,20 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback,
             @Override
             public void onClick(View view) {
                 //권한요청 해야 함
-                if(!isPermission) {
+                if (!isPermission) {
                     callPermission();
                     return;
                 }
 
-                gps=new GpsInfo(getActivity());
+                gps = new GpsInfo(getActivity());
                 //gps 사용여부 가져오기
-                if(gps.isGetLocation()) {
-                    double latitude = gps.getLatitude();
-                    double longitude = gps.getLongitude();
+                if (gps.isGetLocation()) {
+                    latitude = gps.getLatitude();
+                    longitude = gps.getLongitude();
 
                     Toast.makeText(getContext(), "위도=" + latitude + ", 경도=" + longitude, Toast.LENGTH_LONG).show();
+
+                    selectLocationInfo(latitude, longitude);
                 } else {
                     //gps를 사용할 수 없으므로
                     gps.showSettingAlert();
@@ -136,28 +142,28 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback,
     //permission
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
-        if(requestCode == PERMISSIONS_ACCESS_COARSE_LOCATION && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            isAccessCoarseLocation=true;
+        if (requestCode == PERMISSIONS_ACCESS_COARSE_LOCATION && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            isAccessCoarseLocation = true;
         }
 
-        if(isAccessFineLocation && isAccessCoarseLocation) {
-            isPermission=true;
+        if (isAccessFineLocation && isAccessCoarseLocation) {
+            isPermission = true;
         }
     }
 
     private void callPermission() {
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && getContext().checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
-        != PackageManager.PERMISSION_GRANTED) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && getContext().checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                     PERMISSIONS_ACCESS_FINE_LOCATION);
-        } else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
-        && getContext().checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
-        != PackageManager.PERMISSION_GRANTED) {
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+                && getContext().checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
 
             requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
                     PERMISSIONS_ACCESS_COARSE_LOCATION);
         } else {
-            isPermission=true;
+            isPermission = true;
         }
     }
 
@@ -221,20 +227,21 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback,
         }
 
         //안드로이드 서비스 개발
-        selectLocationInfo();
+//        selectLocationInfo();
     }
 
-    private void selectLocationInfo() {
+    private void selectLocationInfo(double myLatitude, double myLongitude) {
         RemoteService remoteService = ServiceGenerator.createService(RemoteService.class);
 
-        double myLatitude = 37.537523;
-        double myLongitude = 126.96558;
-        Call<MemberItem> call = remoteService.selectLocationInfo(myLatitude, myLongitude);
+//        latitude = 37.537523;
+//        longitude = 126.96558;
+        Call<JsonObject> call = remoteService.selectLocationInfo(myLatitude, myLongitude);
 
-        call.enqueue(new Callback<MemberItem>() {
+        call.enqueue(new Callback<JsonObject>() {
             @Override
-            public void onResponse(Call<MemberItem> call, Response<MemberItem> response) {
-//                ArrayList<MemberItem> list = response.body();
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+//                ArrayList<GpsItem> list = response.body();
+//                ArrayList<JsonObject> list = response.body();
 
 //                if(response.isSuccessful() && list != null) {
 //                    infoList.addItemList(list);
@@ -247,10 +254,19 @@ public class LocationFragment extends Fragment implements OnMapReadyCallback,
 
 //                }
 
+                //==
+                if(response.isSuccessful()) {
+                    JsonObject object = response.body();
+                    if(object != null) {
+                        Common.showLogD(object.toString());
+                        Toast.makeText(getContext(), "responce=" + object.toString(), Toast.LENGTH_LONG);
+                    }
+                }
+
             }
 
             @Override
-            public void onFailure(Call<MemberItem> call, Throwable t) {
+            public void onFailure(Call<JsonObject> call, Throwable t) {
                 Common.showLogD("no internet connectivity");
                 Common.showLogD("throwable=" + t.toString());
             }

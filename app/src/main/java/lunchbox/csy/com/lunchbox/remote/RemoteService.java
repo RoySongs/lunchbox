@@ -1,5 +1,8 @@
 package lunchbox.csy.com.lunchbox.remote;
 
+import com.google.gson.JsonObject;
+
+import lunchbox.csy.com.lunchbox.item.GpsItem;
 import lunchbox.csy.com.lunchbox.item.MemberItem;
 import lunchbox.csy.com.lunchbox.model.BasicResult;
 import lunchbox.csy.com.lunchbox.model.LoginResult;
@@ -69,7 +72,7 @@ public interface RemoteService {
 
     //<가람작성>
     @POST("/selectlocation")
-    Call<MemberItem> selectLocationInfo(@Query("myLatitude") double myLatitude, @Query("myLongitude") double myLongitude);
+    Call<JsonObject> selectLocationInfo(@Query("myLatitude") double myLatitude, @Query("myLongitude") double myLongitude);
     //</가람작성>
 
 }
